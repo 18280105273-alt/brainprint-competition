@@ -1,0 +1,33 @@
+{
+  "elapsed_seconds": 17.887,
+  "method": "target covariance center alignment + tangent robust logistic regression",
+  "label_counts": {
+    "0": 3523,
+    "1": 1063,
+    "2": 769,
+    "3": 1057,
+    "4": 846,
+    "5": 782,
+    "6": 1122,
+    "7": 954,
+    "8": 446,
+    "9": 880,
+    "10": 849,
+    "11": 905,
+    "12": 1080,
+    "13": 1095,
+    "14": 975,
+    "15": 901,
+    "16": 1061,
+    "17": 1012,
+    "18": 931,
+    "19": 951,
+    "20": 1049
+  },
+  "v2_agreement": {
+    "adversarial": 0.9816455696202532,
+    "normal": 0.9824173882311362,
+    "unknown": 1.0
+  },
+  "submission_excel": "outputs/submissions/test_submission_v3.xlsx"
+}

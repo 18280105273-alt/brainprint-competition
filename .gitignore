@@ -1,0 +1,24 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# 比赛原始数据、中间特征和训练缓存
+Brainprint_Competition/
+data/raw/
+data/interim/
+data/processed/
+outputs/features/
+outputs/models/
+outputs/audit/*.csv
+outputs/logs/
+
+# 临时渲染文件
+*.pdf
+page-*.png
+
+# 本地配置与密钥
+.env
+kaggle.json
+wandb/
