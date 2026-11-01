@@ -20,7 +20,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from brainprint_comp.data import load_trial, sample_number, subject_number, task_number
+from brainprint_comp.data import load_trial, portable_path, sample_number, subject_number, task_number
 
 
 def parse_args() -> argparse.Namespace:
@@ -42,7 +42,7 @@ def audit_one(path: Path, split: str) -> dict[str, Any]:
     abs_values = np.abs(data)
     row = {
         "split": split,
-        "file_path": str(path.relative_to(ROOT)),
+        "file_path": portable_path(path, ROOT),
         "file_name": path.name,
         "file_size_bytes": path.stat().st_size,
         "subject_id": subject_number(path),
@@ -83,7 +83,7 @@ def audit_many(files: list[Path], split: str, workers: int) -> pd.DataFrame:
                 rows.append(
                     {
                         "split": split,
-                        "file_path": str(path.relative_to(ROOT)),
+                        "file_path": portable_path(path, ROOT),
                         "file_name": path.name,
                         "file_size_bytes": path.stat().st_size if path.exists() else 0,
                         "subject_id": subject_number(path),

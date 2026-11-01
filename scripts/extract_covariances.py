@@ -17,7 +17,7 @@ from scipy.signal import butter, sosfiltfilt
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from brainprint_comp.data import load_trial, sample_number, subject_number, task_number
+from brainprint_comp.data import load_trial, portable_path, sample_number, subject_number, task_number
 
 
 def parse_args() -> argparse.Namespace:
@@ -49,7 +49,7 @@ def covariance_one(path: Path, split: str) -> tuple[str, np.ndarray, dict]:
         covariance,
         {
             "split": split,
-            "file_path": str(path.relative_to(ROOT)),
+            "file_path": portable_path(path, ROOT),
             "sample_id": sample_number(path),
             "subject_id": subject_number(path),
             "task_dir": task_number(path),

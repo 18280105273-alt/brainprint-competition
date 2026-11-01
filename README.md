@@ -23,6 +23,7 @@ Score = 100 × C^0.40 × (0.7×RA + 0.3×ASafeR)^0.35 × U^0.25
 详细阶段报告：
 
 - [`docs/阶段进度汇报_2026-11-01.docx`](docs/阶段进度汇报_2026-11-01.docx)
+- [`docs/独立复核报告_2026-11-01.md`](docs/独立复核报告_2026-11-01.md)
 - [`outputs/reports/final_tangent_metrics.csv`](outputs/reports/final_tangent_metrics.csv)
 - [`outputs/submissions/test_submission_v4.xlsx`](outputs/submissions/test_submission_v4.xlsx)
 - [`docs/最终方案说明.md`](docs/最终方案说明.md)
@@ -93,7 +94,14 @@ python -m src audit
 python -m src features
 python -m src covariances
 python -m src train
+python -m src ensemble
 python -m src predict
+```
+
+也可以直接运行完整流水线：
+
+```bash
+python -m src pipeline
 ```
 
 也可以直接运行脚本：
@@ -103,7 +111,9 @@ python -m src predict
 .venv/bin/python scripts/extract_features.py --workers 8
 .venv/bin/python scripts/extract_covariances.py --workers 8
 .venv/bin/python scripts/train_final_tangent.py
+.venv/bin/python scripts/search_ensemble.py
 .venv/bin/python scripts/generate_v3_tlcenter.py
+.venv/bin/python scripts/generate_v4_ensemble.py
 ```
 
 ## 结果文件

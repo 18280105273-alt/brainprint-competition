@@ -6,12 +6,20 @@ __pycache__/
 
 # 比赛原始数据、中间特征和训练缓存
 Brainprint_Competition/
+Brainprint_Competition
 data/raw/
 data/interim/
 data/processed/
 outputs/features/
 outputs/models/
 outputs/audit/*.csv
+outputs/audit/
+outputs/reports/ensemble_search.csv
+outputs/reports/final_predictions_v2.csv
+outputs/reports/final_tangent_oof_predictions.csv
+outputs/submissions/test_submission_v2.csv
+outputs/submissions/test_submission_v2.xlsx
+outputs/submissions/test_submission_v4.csv
 outputs/logs/
 
 # 临时渲染文件

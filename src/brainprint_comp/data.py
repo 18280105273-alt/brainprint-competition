@@ -88,3 +88,13 @@ def sample_number(path: Path) -> int | None:
     if stem.startswith("test_") and stem[5:].isdigit():
         return int(stem[5:])
     return None
+
+
+def portable_path(path: Path, root: Path) -> str:
+    """优先记录仓库相对路径，外部数据则记录绝对路径。"""
+
+    resolved = path.resolve()
+    try:
+        return str(resolved.relative_to(root.resolve()))
+    except ValueError:
+        return str(resolved)
