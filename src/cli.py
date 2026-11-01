@@ -15,7 +15,7 @@ COMMANDS = {
     "features": ("scripts/extract_features.py", ["--workers", "8"]),
     "covariances": ("scripts/extract_covariances.py", ["--workers", "8"]),
     "train": ("scripts/train_final_tangent.py", []),
-    "predict": ("scripts/generate_v3_tlcenter.py", []),
+    "predict": ("scripts/generate_v4_ensemble.py", []),
 }
 
 

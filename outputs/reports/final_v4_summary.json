@@ -1,0 +1,57 @@
+{
+  "elapsed_seconds": 18.324,
+  "method": "task-specific tangent ensemble + target covariance alignment",
+  "weights": {
+    "EC": {
+      "tan_rob": 0.7,
+      "tan_all": 0.2,
+      "tan_relcorr": 0.1
+    },
+    "EO": {
+      "tan_all": 1.0
+    },
+    "Imagery": {
+      "tan_all": 1.0
+    },
+    "SSVEP": {
+      "tan_rob": 0.6,
+      "tan_all": 0.4
+    }
+  },
+  "label_counts": {
+    "0": 3905,
+    "1": 1025,
+    "2": 789,
+    "3": 1072,
+    "4": 839,
+    "5": 694,
+    "6": 1106,
+    "7": 954,
+    "8": 429,
+    "9": 877,
+    "10": 848,
+    "11": 878,
+    "12": 1086,
+    "13": 1083,
+    "14": 914,
+    "15": 898,
+    "16": 1013,
+    "17": 1007,
+    "18": 886,
+    "19": 926,
+    "20": 1022
+  },
+  "v3_agreement": {
+    "adversarial": 0.8348101265822785,
+    "normal": 0.8746244919597101,
+    "unknown": 1.0
+  },
+  "submission_excel": "outputs/submissions/test_submission_v4.xlsx",
+  "validation": {
+    "C": 0.9896103530420901,
+    "RA": 0.9859662447257383,
+    "ASafeR": 0.9918025316455698,
+    "A": 0.9877171308016877,
+    "projected_score": 99.15328272221839
+  }
+}

@@ -14,5 +14,5 @@ ARTIFACTS = {
     "features": "outputs/features/train_features.npz",
     "covariances": "outputs/features/train_covariances.npy",
     "metrics": "outputs/reports/final_tangent_metrics.csv",
-    "submission": "outputs/submissions/test_submission_v3.xlsx",
+    "submission": "outputs/submissions/test_submission_v4.xlsx",
 }
