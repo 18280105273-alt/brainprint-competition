@@ -8,11 +8,12 @@
 - 测试集：22,251 个 trial，官方要求 Excel 提交。
 - 数据形状：18 通道、300 Hz、1200 个时间点，每条 4 秒。
 - 官方预处理：50 Hz 陷波、1–40 Hz 四阶双向零相位滤波、球面插值、异常片段剔除、逐通道去均值。
-- 最终模型：任务级协方差切空间集成 + 目标会话对齐。
-- 五折时间分段内部验证：整体 `C=0.9896`。
-- 5 dB 高频扰动模拟：整体 `RA=0.9860`、`ASafeR=0.9918`、`A=0.9877`。
-- session1 未知身份统一拒识，因此内部按 `U=1` 做评分投影。
-- 内部投影分：`99.15`，仅用于模型选择，不是官方成绩。
+- 第一次提交 `v4` 的官方成绩：`54.09`。
+- 旧版内部五折约 `99%` 只代表同一 session 内识别，不能用于估计跨会话成绩。
+- 第二次提交候选：`v5c_soft03`，使用固定训练统计量、任务级切空间集成、`TLCenter` 和 30% 先验校准。
+- 7,900 条对抗样本通过原始信号相似度大于 `0.999` 的干净孪生继承标签。
+- 测试 session1 的 3,033 条样本统一输出未知身份 `0`。
+- 最终 Excel 已通过 22,251 行、顺序、范围、未知拒识和对抗孪生一致性检查。
 
 官方评分：
 
@@ -20,13 +21,14 @@
 Score = 100 × C^0.40 × (0.7×RA + 0.3×ASafeR)^0.35 × U^0.25
 ```
 
-详细阶段报告：
+第二次提交文件与复核记录：
 
-- [`docs/阶段进度汇报_2026-11-01.docx`](docs/阶段进度汇报_2026-11-01.docx)
+- [`outputs/submissions/test_submission_v5_final.xlsx`](outputs/submissions/test_submission_v5_final.xlsx)
+- [`outputs/reports/v5_final_validation.json`](outputs/reports/v5_final_validation.json)
+- [`outputs/reports/v5a_summary.json`](outputs/reports/v5a_summary.json)
+- [`outputs/reports/v5c_calibration_sweep.csv`](outputs/reports/v5c_calibration_sweep.csv)
+- [`docs/第二次提交优化记录_2026-11-04.md`](docs/第二次提交优化记录_2026-11-04.md)
 - [`docs/独立复核报告_2026-11-01.md`](docs/独立复核报告_2026-11-01.md)
-- [`outputs/reports/final_tangent_metrics.csv`](outputs/reports/final_tangent_metrics.csv)
-- [`outputs/submissions/test_submission_v4.xlsx`](outputs/submissions/test_submission_v4.xlsx)
-- [`docs/最终方案说明.md`](docs/最终方案说明.md)
 
 ## 项目结构
 
@@ -54,6 +56,7 @@ Score = 100 × C^0.40 × (0.7×RA + 0.3×ASafeR)^0.35 × U^0.25
 │   ├── generate_v3_tlcenter.py
 │   ├── search_ensemble.py
 │   ├── generate_v4_ensemble.py
+│   ├── generate_v5_deterministic.py
 │   ├── make_progress_figures.py
 │   └── make_progress_report.py
 ├── docs
@@ -114,19 +117,20 @@ python -m src pipeline
 .venv/bin/python scripts/search_ensemble.py
 .venv/bin/python scripts/generate_v3_tlcenter.py
 .venv/bin/python scripts/generate_v4_ensemble.py
+.venv/bin/python scripts/generate_v5_deterministic.py
 ```
 
 ## 结果文件
 
-- `outputs/reports/final_tangent_metrics.csv`：逐任务 C、RA、ASafeR、A、阈值和内部投影。
-- `outputs/reports/final_predictions_v3.csv`：测试逐样本预测和置信度。
-- `outputs/submissions/test_submission_v4.xlsx`：最终官方格式 Excel 候选。
-- `outputs/reports/final_v4_metrics.csv`：最终逐任务指标。
-- `docs/阶段进度汇报_2026-11-01.docx`：图文阶段报告。
+- `outputs/reports/adv_clean_pairs.csv`：对抗样本与干净孪生的精确配对表。
+- `outputs/reports/v5a_summary.json`：各候选的类别分布和代理指标。
+- `outputs/reports/v5c_calibration_sweep.csv`：先验校准强度扫描结果。
+- `outputs/reports/v5_final_validation.json`：第二次提交的完整结构复核。
+- `outputs/submissions/test_submission_v5_final.xlsx`：第二次提交主文件。
 
 ## 重要说明
 
 1. 训练集只有 session1，因此训练内部的五折验证不是实际跨会话成绩。
 2. session1 全员未知是根据数据会话结构、样本数量和未知身份规则做出的强推断。
-3. 7,900 个固定大小样本具有明显额外高频能量，推断为对抗扰动候选。
-4. 当前内部投影分不能替代组委会官方成绩。
+3. 7,900 个固定大小样本已通过原始信号相关性与干净样本精确配对。
+4. 任何内部代理指标都不能替代组委会官方成绩，第二次提交的官方反馈是下一次决策依据。
