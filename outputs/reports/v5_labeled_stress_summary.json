@@ -70,11 +70,29 @@
       "feature_standardized": 0.97045
     }
   },
+  "feature_block_centering_accuracy": {
+    "clean": {
+      "baseline": 0.98064,
+      "feature_centered": 0.97950
+    },
+    "mix5": {
+      "baseline": 0.96966,
+      "feature_centered": 0.97305
+    },
+    "mix10": {
+      "baseline": 0.96933,
+      "feature_centered": 0.97294
+    },
+    "mix15": {
+      "baseline": 0.96786,
+      "feature_centered": 0.97181
+    }
+  },
   "conclusions": [
     "无标签频谱一致率会惩罚先验校准，不能单独决定校准强度。",
     "协方差重收缩提高两视图一致率，但降低有标签压力测试准确率，因此淘汰。",
     "完整目标集一次性标准化在无扰动时几乎无损，并持续改善 5/10/15 度通道混合准确率。",
-    "只标准化目标手工特征块比同时标准化切空间更稳定；v5h_feature_aligned 作为第二次主提交。",
-    "v5g_target_aligned、共享均匀先验版本和 v5c 保留为回滚候选。"
+    "目标特征块的增益来自均值中心化，标准差缩放没有正贡献；v5i_feature_center 作为第二次主提交。",
+    "v5h_feature_aligned、v5g_target_aligned、共享均匀先验版本和 v5c 保留为回滚候选。"
   ]
 }

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""生成任务级目标特征标准化候选，并使用共享均匀先验校准。"""
+"""生成任务级目标特征中心化候选，并使用共享均匀先验校准。"""
 
 from __future__ import annotations
 
@@ -51,7 +51,7 @@ def aligned_probability(
     robust_mask: np.ndarray,
     relcorr_mask: np.ndarray,
 ) -> np.ndarray:
-    """先做切空间对齐，再只把完整目标集的手工特征块标准化。"""
+    """先做切空间对齐，再只消除完整目标集手工特征块的均值漂移。"""
 
     source_tangent, target_tangent = align_tangent(
         train_covariance,
@@ -74,9 +74,6 @@ def aligned_probability(
         target_scaled[:, tangent_dimensions:] = (
             target_scaled[:, tangent_dimensions:]
             - target_scaled[:, tangent_dimensions:].mean(axis=0, keepdims=True)
-        ) / np.maximum(
-            target_scaled[:, tangent_dimensions:].std(axis=0, keepdims=True),
-            1e-8,
         )
         model = classifier().fit(source_scaled, train_labels)
         probability += WEIGHTS[task].get(design_name, 0.0) * model.predict_proba(
@@ -159,7 +156,7 @@ def main() -> None:
         )
         probability[target_indices] = task_probability.astype(np.float32)
         np.savez_compressed(
-            REPORT_DIR / f"v5h_probs_{task}.npz",
+            REPORT_DIR / f"v5i_probs_{task}.npz",
             probability=task_probability.astype(np.float32),
             sample_ids=test_meta.loc[target_indices, "sample_id"].to_numpy(),
         )
@@ -195,11 +192,11 @@ def main() -> None:
     prediction["predicted_label"] = predicted_label
     prediction["confidence"] = probability.max(axis=1)
     prediction.to_csv(
-        REPORT_DIR / "final_predictions_v5h_feature_aligned.csv",
+        REPORT_DIR / "final_predictions_v5i_feature_center.csv",
         index=False,
         encoding="utf-8-sig",
     )
-    save_submission(prediction, "v5h_feature_aligned")
+    save_submission(prediction, "v5i_feature_center")
 
 
 if __name__ == "__main__":
