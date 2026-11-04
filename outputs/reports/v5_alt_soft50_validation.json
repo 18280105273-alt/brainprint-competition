@@ -1,0 +1,16 @@
+{
+  "candidate": "v5_alt_soft50",
+  "checks": {
+    "rows": true,
+    "order": true,
+    "columns": true,
+    "unique": true,
+    "integer": true,
+    "range": true,
+    "unknown_zero": true,
+    "adv_inherit": true,
+    "excel_rows": true,
+    "excel_order": true
+  },
+  "passed": true
+}

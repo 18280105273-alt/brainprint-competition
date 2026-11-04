@@ -57,6 +57,7 @@ Score = 100 × C^0.40 × (0.7×RA + 0.3×ASafeR)^0.35 × U^0.25
 │   ├── search_ensemble.py
 │   ├── generate_v4_ensemble.py
 │   ├── generate_v5_deterministic.py
+│   ├── generate_v5_alt_calibration.py
 │   ├── make_progress_figures.py
 │   └── make_progress_report.py
 ├── docs
@@ -125,8 +126,12 @@ python -m src pipeline
 - `outputs/reports/adv_clean_pairs.csv`：对抗样本与干净孪生的精确配对表。
 - `outputs/reports/v5a_summary.json`：各候选的类别分布和代理指标。
 - `outputs/reports/v5c_calibration_sweep.csv`：先验校准强度扫描结果。
+- `outputs/reports/v5_labeled_stress_summary.json`：通道混合与有标签压力测试。
 - `outputs/reports/v5_final_validation.json`：第二次提交的完整结构复核。
 - `outputs/submissions/test_submission_v5_final.xlsx`：第二次提交主文件。
+- `outputs/submissions/test_submission_v5_alt_soft50.xlsx`：第三次候选，50% 先验校准。
+- `outputs/submissions/test_submission_v5_alt_soft70.xlsx`：第三次候选，70% 先验校准。
+- `outputs/submissions/test_submission_v5_alt_full.xlsx`：第三次候选，完整训练先验校准。
 
 ## 重要说明
 
