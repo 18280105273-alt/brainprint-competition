@@ -1,30 +1,36 @@
 {
-  "selected_candidate": "v5_alt_uniform_full",
-  "strategy": "完整共享均匀先验校准；所有任务同一20人，测试设计近似均衡",
-  "proxy_spectral_agreement": 0.6426047004771162,
-  "labeled_mix10_accuracy": 0.96933,
+  "selected_candidate": "v5g_target_aligned",
+  "strategy": "TLCenter + 每个任务完整目标集一次性标准化 + 跨任务共享均匀先验完整校准",
+  "proxy_spectral_agreement": 0.6483477646227248,
+  "target_aligned_vs_uniform_normal_agreement": 0.91783000530129,
+  "labeled_stress": {
+    "clean": 0.97088,
+    "mix5": 0.97284,
+    "mix10": 0.97136,
+    "mix15": 0.96898
+  },
   "label_counts": {
     "0": 3033,
-    "1": 1063,
-    "2": 886,
-    "3": 1231,
-    "4": 717,
-    "5": 659,
-    "6": 1162,
-    "7": 1023,
-    "8": 545,
-    "9": 657,
-    "10": 1017,
-    "11": 1392,
-    "12": 833,
-    "13": 1062,
-    "14": 789,
-    "15": 940,
-    "16": 1294,
-    "17": 1534,
-    "18": 1078,
-    "19": 601,
-    "20": 735
+    "1": 1067,
+    "2": 805,
+    "3": 1235,
+    "4": 739,
+    "5": 643,
+    "6": 1169,
+    "7": 1011,
+    "8": 505,
+    "9": 646,
+    "10": 1042,
+    "11": 1416,
+    "12": 828,
+    "13": 1048,
+    "14": 770,
+    "15": 960,
+    "16": 1357,
+    "17": 1513,
+    "18": 985,
+    "19": 729,
+    "20": 750
   },
   "checks": {
     "rows": true,
@@ -45,6 +51,11 @@
     "excel_range": true
   },
   "all_checks_passed": true,
+  "deterministic_csv_hash": "9eecc987a4f8881a710c554db5bece5273b12e26a9c4246745c8086d12328e9a",
   "final_xlsx": "/Users/lizhongxing/Desktop/脑纹识别/outputs/submissions/test_submission_v5_final.xlsx",
-  "fallback": "v5c_soft03"
+  "fallback_candidates": [
+    "v5_alt_uniform_full",
+    "v5_alt_soft70",
+    "v5c_soft03"
+  ]
 }
