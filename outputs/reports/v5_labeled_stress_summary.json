@@ -29,9 +29,14 @@
       "15_degree": 0.42949
     }
   },
+  "prior_strategy_accuracy_under_mix10_full_calibration": {
+    "task_specific_training_prior": 0.96806,
+    "shared_uniform_prior": 0.96933,
+    "global_average_training_prior": 0.96649
+  },
   "conclusions": [
     "无标签频谱一致率会惩罚先验校准，不能单独决定校准强度。",
     "协方差重收缩提高两视图一致率，但降低有标签压力测试准确率，因此淘汰。",
-    "v5c 仍作为第二次提交的保守探针；alpha 0.50、0.70 和 1.0 已作为第三次候选保留。"
+    "v5c 仍作为第二次提交的保守探针；alpha 0.50、0.70、1.0 和共享均匀先验完整校准已作为第三次候选保留。"
   ]
 }

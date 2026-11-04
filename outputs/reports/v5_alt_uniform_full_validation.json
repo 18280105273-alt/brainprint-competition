@@ -1,0 +1,18 @@
+{
+  "candidate": "v5_alt_uniform_full",
+  "checks": {
+    "rows": true,
+    "order": true,
+    "columns": true,
+    "unique": true,
+    "integer": true,
+    "range": true,
+    "unknown_zero": true,
+    "adv_inherit": true,
+    "twin_consistent": true,
+    "excel_rows": true,
+    "excel_order": true,
+    "excel_int": true
+  },
+  "passed": true
+}

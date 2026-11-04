@@ -10,7 +10,8 @@
 - 官方预处理：50 Hz 陷波、1–40 Hz 四阶双向零相位滤波、球面插值、异常片段剔除、逐通道去均值。
 - 第一次提交 `v4` 的官方成绩：`54.09`。
 - 旧版内部五折约 `99%` 只代表同一 session 内识别，不能用于估计跨会话成绩。
-- 第二次提交候选：`v5c_soft03`，使用固定训练统计量、任务级切空间集成、`TLCenter` 和 30% 先验校准。
+- 第二次提交候选：`v5_alt_uniform_full`，使用固定训练统计量、任务级切空间集成、`TLCenter` 和跨任务共享均匀先验完整校准。
+- 保守回滚候选：`v5c_soft03`，使用 30% 训练先验软校准。
 - 7,900 条对抗样本通过原始信号相似度大于 `0.999` 的干净孪生继承标签。
 - 测试 session1 的 3,033 条样本统一输出未知身份 `0`。
 - 最终 Excel 已通过 22,251 行、顺序、范围、未知拒识和对抗孪生一致性检查。
@@ -132,6 +133,7 @@ python -m src pipeline
 - `outputs/submissions/test_submission_v5_alt_soft50.xlsx`：第三次候选，50% 先验校准。
 - `outputs/submissions/test_submission_v5_alt_soft70.xlsx`：第三次候选，70% 先验校准。
 - `outputs/submissions/test_submission_v5_alt_full.xlsx`：第三次候选，完整训练先验校准。
+- `outputs/submissions/test_submission_v5_alt_uniform_full.xlsx`：第三次候选，完整共享均匀先验校准。
 
 ## 重要说明
 
