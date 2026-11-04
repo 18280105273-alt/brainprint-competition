@@ -1,0 +1,10 @@
+{
+  "legacy_file": "队名-第二次.csv",
+  "legacy_file_sha256": "b568fb10a1961a20f06bdc1b30690c34e1e04202715895e2d26fa3b6a5c78162",
+  "matching_candidate": "v5b_fixed_tlc",
+  "matching_candidate_csv": "outputs/submissions/test_submission_v5b_fixed_tlc.csv",
+  "label_agreement": 1.0,
+  "note": "早先 CSV 是 v5b 完整训练先验校准版本；当前队名-第二次.xlsx 是 v5i_feature_center。",
+  "current_xlsx": "队名-第二次.xlsx",
+  "current_xlsx_sha256": "9ade5b92eb9b6b3ce71b58b1ec2c416c98ad0545cb4fe93a8386ddda5576e0d0"
+}
