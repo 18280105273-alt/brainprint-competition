@@ -1,0 +1,52 @@
+{
+  "candidate": "v5h_feature_aligned",
+  "method": "TLCenter + 目标手工特征块标准化 + 共享均匀先验完整校准",
+  "labeled_stress": {
+    "clean": 0.9795,
+    "mix5": 0.97158,
+    "mix10": 0.97238,
+    "mix15": 0.97045
+  },
+  "label_counts": {
+    "0": 3033,
+    "1": 1068,
+    "2": 817,
+    "3": 1230,
+    "4": 734,
+    "5": 634,
+    "6": 1161,
+    "7": 1001,
+    "8": 539,
+    "9": 655,
+    "10": 1037,
+    "11": 1409,
+    "12": 830,
+    "13": 1073,
+    "14": 785,
+    "15": 926,
+    "16": 1294,
+    "17": 1522,
+    "18": 1045,
+    "19": 709,
+    "20": 749
+  },
+  "checks": {
+    "rows": true,
+    "columns": true,
+    "order": true,
+    "unique": true,
+    "integer": true,
+    "range": true,
+    "mapping": true,
+    "unknown_zero": true,
+    "normal_nonzero": true,
+    "adv_rows": true,
+    "adv_inherit": true,
+    "twin_consistent": true,
+    "excel_rows": true,
+    "excel_order": true,
+    "excel_int": true,
+    "excel_range": true
+  },
+  "passed": true
+}

@@ -10,8 +10,8 @@
 - 官方预处理：50 Hz 陷波、1–40 Hz 四阶双向零相位滤波、球面插值、异常片段剔除、逐通道去均值。
 - 第一次提交 `v4` 的官方成绩：`54.09`。
 - 旧版内部五折约 `99%` 只代表同一 session 内识别，不能用于估计跨会话成绩。
-- 第二次提交候选：`v5g_target_aligned`，使用任务级切空间集成、`TLCenter`、每个任务完整目标集一次性标准化和跨任务共享均匀先验完整校准。
-- 回滚候选：`v5_alt_uniform_full` 和 `v5c_soft03`。
+- 第二次提交候选：`v5h_feature_aligned`，使用任务级切空间集成、`TLCenter`、目标手工特征块一次性标准化和跨任务共享均匀先验完整校准。
+- 回滚候选：`v5g_target_aligned`、`v5_alt_uniform_full` 和 `v5c_soft03`。
 - 7,900 条对抗样本通过原始信号相似度大于 `0.999` 的干净孪生继承标签。
 - 测试 session1 的 3,033 条样本统一输出未知身份 `0`。
 - 最终 Excel 已通过 22,251 行、顺序、范围、未知拒识和对抗孪生一致性检查。
@@ -131,8 +131,9 @@ python -m src pipeline
 - `outputs/reports/v5_labeled_stress_summary.json`：通道混合与有标签压力测试。
 - `outputs/reports/v5_final_validation.json`：第二次提交的完整结构复核。
 - `outputs/reports/v5g_target_aligned_validation.json`：目标标准化候选的独立复核。
+- `outputs/reports/v5h_feature_aligned_validation.json`：目标特征块标准化的独立复核。
 - `outputs/submissions/test_submission_v5_final.xlsx`：第二次提交主文件。
-- `outputs/submissions/test_submission_v5g_target_aligned.xlsx`：目标标准化主候选备份。
+- `outputs/submissions/test_submission_v5h_feature_aligned.xlsx`：目标特征标准化主候选备份。
 - `outputs/submissions/test_submission_v5_alt_soft50.xlsx`：第三次候选，50% 先验校准。
 - `outputs/submissions/test_submission_v5_alt_soft70.xlsx`：第三次候选，70% 先验校准。
 - `outputs/submissions/test_submission_v5_alt_full.xlsx`：第三次候选，完整训练先验校准。
