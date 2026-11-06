@@ -1,0 +1,14 @@
+{
+  "rows": true,
+  "columns": true,
+  "order": true,
+  "no_null": true,
+  "unique_sample": true,
+  "integer": true,
+  "range": true,
+  "mail_equal": true,
+  "unknown_zero": true,
+  "adversarial_rejected": 610,
+  "adversarial_total": 7900,
+  "all_passed": true
+}

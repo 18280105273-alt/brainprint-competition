@@ -1,0 +1,47 @@
+{
+  "candidates": [
+    "v5i_exact",
+    "tan_all",
+    "band_tan_robust",
+    "lr_0.1"
+  ],
+  "weights": [
+    1.0,
+    2.0,
+    4.0,
+    2.0
+  ],
+  "rows": 22251,
+  "label_counts": {
+    "0": 3643,
+    "1": 999,
+    "2": 566,
+    "3": 1291,
+    "4": 401,
+    "5": 1551,
+    "6": 1359,
+    "7": 1134,
+    "8": 25,
+    "9": 389,
+    "10": 815,
+    "11": 960,
+    "12": 855,
+    "13": 1315,
+    "14": 844,
+    "15": 1097,
+    "16": 1370,
+    "17": 1995,
+    "18": 609,
+    "19": 438,
+    "20": 595
+  },
+  "unknown_zero": true,
+  "adversarial_rejected": 610,
+  "adversarial_total": 7900,
+  "unknown_total": 3033,
+  "calibration": "train03",
+  "reject_threshold": 0.3,
+  "final_xlsx": "/Users/lizhongxing/Desktop/脑纹识别/brainprint-competition/outputs/submissions/test_submission_v6_final.xlsx",
+  "mail_xlsx": "/Users/lizhongxing/Desktop/脑纹识别/brainprint-competition/队名-第三次.xlsx",
+  "sha256": "3be30b5a5dd014a08ead9e138061a82b83d2a82a55c70cb5282905cbda05009c"
+}

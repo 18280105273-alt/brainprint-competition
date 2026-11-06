@@ -7,6 +7,8 @@ __pycache__/
 # 比赛原始数据、中间特征和训练缓存
 Brainprint_Competition/
 Brainprint_Competition
+outputs/features
+outputs/models
 data/raw/
 data/interim/
 data/processed/
@@ -15,6 +17,9 @@ outputs/models/
 outputs/audit/*.csv
 outputs/audit/
 outputs/reports/ensemble_search.csv
+outputs/reports/v6_probs_*.npz
+outputs/reports/v6_search_*.json
+outputs/reports/v6_band0.json
 outputs/reports/final_predictions_v2.csv
 outputs/reports/final_tangent_oof_predictions.csv
 outputs/submissions/test_submission_v2.csv
